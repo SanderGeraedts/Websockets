@@ -1,0 +1,16 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		var ws = new WebSocket('ws://www.codepanda.nl/feedback/websockets:1234', 'echo-protocol');
+
+		ws.addEventListener("message", function(e) {
+			var img = e.data;
+			document.getElementById('viewer').src = img;
+		});
+	</script>
+</head>
+<body>
+	<img id="viewer" class="displayed" src="" alt=""></img>
+</body>
+</html>
